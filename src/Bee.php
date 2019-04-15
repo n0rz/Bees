@@ -63,7 +63,6 @@ class Bee {
 
     /**
      * Sets the HP for current bee to 0 and alive to false
-     * Used for killing all bees when queen is dead
      */
     public function killBee() {
         $this->hp = 0;
@@ -76,8 +75,7 @@ class Bee {
      */
     private function damageHp(int $damage) {
         if ($this->hp - $damage <= 0) {
-            $this->hp = 0;
-            $this->alive = false;
+            $this->killBee();
         } else {
             $this->hp -= $damage;
         }
