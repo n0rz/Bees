@@ -6,13 +6,11 @@ session_start();
 //Using Session as the game state
 if (!isset($_SESSION['hive'])) {
     $hive = new Hive();
-    $_SESSION['hive'] = $hive;
 } elseif (isset($_POST['shot_fired'])) {
     $hive = $_SESSION['hive'];
     $hive->shoot();
-    $_SESSION['hive'] = $hive;
 }
-
+$_SESSION['hive'] = $hive;
 ?>
 
 <form action="" method="post">

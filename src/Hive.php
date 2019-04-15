@@ -72,13 +72,6 @@ class Hive
     }
 
     /**
-     * @return array
-     */
-    public function getBees() {
-        return $this->hive;
-    }
-
-    /**
      * @return bool
      */
     public function isGameOver() {
